@@ -1,0 +1,19 @@
+name: legacy.erc-assoc
+recipe: drupal7
+config:
+  webroot: web
+
+services:
+  phpmyadmin:
+    type: phpmyadmin
+    portforward: true
+
+  mailhog:
+    type: mailhog
+    portforward: true
+proxy:
+  phpmyadmin:
+    - phpmyadmin.legacy.erc-assoc.lndo.site
+
+  mailhog:
+    - mailhog.legacy.erc-assoc.lndo.site
